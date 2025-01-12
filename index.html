@@ -208,7 +208,7 @@ var _ckyStyles = {"css":".cky-overlay{background: #000000; opacity: 0.4; positio
 						<div class="elementor-element elementor-element-923cdab elementor-widget elementor-widget-video" data-id="923cdab" data-element_type="widget" data-settings="{" video_type":"hosted","controls":"yes"}"="" data-widget_type="video.default">
 				<div class="elementor-widget-container">
 			<style></style>		<div class="e-hosted-video elementor-wrapper elementor-open-inline">
-					<iframe src="https://drive.google.com/file/d/1b80Php21GwszOwDZmpE9QASa9kuhJIF2/preview" width="640" height="480" allow="autoplay"></iframe>
+				<iframe src="https://drive.google.com/file/d/1b80Php21GwszOwDZmpE9QASa9kuhJIF2/preview" width="640" height="480" allow="autoplay"></iframe>
 				</div>
 				</div>
 				</div>
@@ -622,7 +622,16 @@ var _ckyStyles = {"css":".cky-overlay{background: #000000; opacity: 0.4; positio
 				<div class="post-tags">
 					</div>
 			</div>
-
+			<script>
+				document.querySelectorAll('.elementor-tab-title').forEach((tab) => {
+					tab.addEventListener('click', () => {
+						const content = document.getElementById(tab.getAttribute('aria-controls'));
+						const isExpanded = tab.getAttribute('aria-expanded') === 'true';
+						tab.setAttribute('aria-expanded', !isExpanded);
+						content.style.display = isExpanded ? 'none' : 'block';
+					});
+				});
+			</script>
 	
 </main>
 
